@@ -1,0 +1,276 @@
+<!--
+    Design of this website is pretty much the same as what apollyon600 did
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SkyblockRemastered Crafting Recipe Generator</title>
+        <link rel="stylesheet" href="src/style.css">
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
+        <meta content="SkyblockRemastered" property="og:title">
+        <meta content="A Recipe Generator for SkyblockRemastered" property="og:description">
+        <meta property="og:url" content="http://apollyon600.github.io/SkyblockRemastered"/>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!--<script src="bundle.js" type="text/javascript"></script>-->
+        <div class="header">
+            <button class="button contents" style="width: 190px; text-align: center; font-size: small;"><a href="../../index.html">HOME</a></button>
+            <h1>Welcome to the SkyblockRemastered Crafting Recipe Generator</h1>
+            <h3>Fill out the crafting slots with the base64 IDs from https://skyblockremastered.github.io/resourceSubmission/SBR-Item-Creation/</h3>
+        </div>
+        <div class="information">
+            <button class="button contents" style="width: 190px; text-align: center; font-size: small;" onclick="toggleLightDarkMode();" id="toggleLightDarkMode">Switch to Dark Mode</button>
+        </div>
+
+        <div id="observe">
+            <div class="itemInformation">
+                
+                <h1>Item IDs</h1>
+                
+            <h1>Item Statistics</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Damage</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemDamageField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Strength</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemStrengthField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Crit Damage</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemCritDamageField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Crit Chance</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemCritChanceField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Attack Speed</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemAttackSpeedField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Sea Creature Chance</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemSeaCreatureChanceField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Health</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemHealthField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Defense</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemDefenseField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Speed</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemSpeedField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Intelligence</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemIntelligenceField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">True Defense</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemTrueDefenseField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Magic Find</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemMagicFindField" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mpnc">Pet Luck</div>
+                        </td>
+                        <td>
+                            <input type="number" class="mcfield" id="itemPetLuckField" placeholder="0">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <label class="container mpnc">Recipe?
+                <input type="checkbox" id="isRecipe">
+                <span class="checkmark"></span>
+            </label><br>
+            <label class="container mpnc">Reforgeable?
+                <input type="checkbox" id="isReforgeable">
+                <span class="checkmark"></span>
+            </label><br>
+            <label class="container mpnc">Recombobulated?
+                <input type="checkbox" id="isRecomb">
+                <span class="checkmark"></span>
+            </label>
+            <div class="abilityA">
+                <h1>Ability #1</h1>
+                <input type="text" class="mcfield" id="abilityNameA" placeholder="Ability Name"><br>
+                <textarea type="text" class="mcfield" id="abilityDescA" placeholder="Ability Description" rows=3></textarea><br>
+                <input type="number" class="mcfield" id="abilityCostA" placeholder="Ability Cost"><br>
+                <input style="display: none; width: 70px;" type="number" class="mcfield" id="abilityNumberA" placeholder="Number">
+                <input style="width: 178px" type="number" class="mcfield" id="abilityCooldownA" placeholder="Ability Cooldown">
+                <button class="button contents" style="width: 177px; text-align: center;" onclick="switchCooldownType(this);" id="abilityCooldownTypeA">Seconds</button><br>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityType(this);" id="abilityTypeA">Item Ability</button>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityUsage(this);" id="abilityUsageA">Right Click</button>
+            </div>
+            <div class="abilityB">
+                <h1>Ability #2</h1>
+                <input type="text" class="mcfield" id="abilityNameB" placeholder="Ability Name"><br>
+                <textarea type="text" class="mcfield" id="abilityDescB" placeholder="Ability Description" rows=3></textarea><br>
+                <input type="number" class="mcfield" id="abilityCostB" placeholder="Ability Cost"><br>
+                <input style="display: none; width: 70px;" type="number" class="mcfield" id="abilityNumberB" placeholder="Number">
+                <input style="width: 178px" type="number" class="mcfield" id="abilityCooldownB" placeholder="Ability Cooldown">
+                <button class="button contents" style="width: 177px; text-align: center;" onclick="switchCooldownType(this);" id="abilityCooldownTypeB">Seconds</button><br>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityType(this);" id="abilityTypeB">Item Ability</button>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityUsage(this);" id="abilityUsageB">Right Click</button>
+            </div>
+            <div class="abilityC">
+                <h1>Ability #3</h1>
+                <input type="text" class="mcfield" id="abilityNameC" placeholder="Ability Name"><br>
+                <textarea type="text" class="mcfield" id="abilityDescC" placeholder="Ability Description" rows=3></textarea><br>
+                <input type="number" class="mcfield" id="abilityCostC" placeholder="Ability Cost"><br>
+                <input style="display: none; width: 70px;" type="number" class="mcfield" id="abilityNumberC" placeholder="Number">
+                <input style="width: 178px" type="number" class="mcfield" id="abilityCooldownC" placeholder="Ability Cooldown">
+                <button class="button contents" style="width: 177px; text-align: center;" onclick="switchCooldownType(this);" id="abilityCooldownTypeC">Seconds</button><br>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityType(this);" id="abilityTypeC">Item Ability</button>
+                <button class="button contents" style="width: 190px; text-align: center;" onclick="switchAbilityUsage(this);" id="abilityUsageC">Right Click</button>
+            </div>
+        </div>
+        <br><h1>Item Display</h1>
+        <div class="imgbord" id="itemDisplay">
+            <span class="black" id="itemName"></span>
+            <span class="black" id="itemDamage"></span>
+            <span class="black" id="itemStrength"></span>
+            <span class="black" id="itemCritDamage"></span>
+            <span class="black" id="itemCritChance"></span>
+            <span class="black" id="itemAttackSpeed"></span>
+            <span class="black" id="itemSeaCreatureChance"></span>
+            <span class="black" id="break1"></span>
+            <span class="black" id="itemHealth"></span>
+            <span class="black" id="itemDefense"></span>
+            <span class="black" id="itemSpeed"></span>
+            <span class="black" id="itemIntelligence"></span>
+            <span class="black" id="itemTrueDefense"></span>
+            <span class="black" id="itemMagicFind"></span>
+            <span class="black" id="itemPetLuck"></span>
+            <span class="black" id="break2"></span>
+            <span class="black" id="itemDescription"></span>
+            <span class="black" id="break3"></span>
+            <div>
+                <span class="black" id="itemNameA"></span>
+                <span class="black" id="itemDescA"></span>
+                <span class="black" id="itemCostA"></span>
+                <span class="black" id="itemCooldownA"></span>
+            </div>
+            <span class="black" id="break4"></span>
+            <div>
+                <span class="black" id="itemNameB"></span>
+                <span class="black" id="itemDescB"></span>
+                <span class="black" id="itemCostB"></span>
+                <span class="black" id="itemCooldownB"></span>
+            </div>
+            <span class="black" id="break5"></span>
+            <div>
+                <span class="black" id="itemNameC"></span>
+                <span class="black" id="itemDescC"></span>
+                <span class="black" id="itemCostC"></span>
+                <span class="black" id="itemCooldownC"></span>
+            </div>
+            <span class="black" id="break6"></span>
+            <span class="black" id="itemReforgeable"></span>
+            <span class="black" id="itemRecipe"></span>
+            <span class="black" id="itemSlayer"></span>
+            </span><span class="black" id="itemType"></span>
+        </div>
+        <br><br>
+        <h1>Java Code</h1>
+        <div class="imgbord" id="javaCodeDisplay">
+            <span class="black" id="javaCode" wrap="off">Complete the required fields to generate the java output<br></span>
+        </div>
+        <button class="button contents" style="width: 190px; text-align: center;" onclick="copyJavaToClipboard();" id="copyJavaCode">Copy to Clipboard</button>
+        <h1>Command Generator</h1>
+        <div class="imgbord" id="mcCodeDisplay">
+            <span class="black" id="commandGenerator">Lazy to code this, pretty sad.</span>
+        </div><br>
+        <h1>??? Generator</h1>
+        <div class="imgbord" id="base64CodeDisplay">
+            <span class="black" id="codeGenerator">This will be more useful in the future.</span>
+        </div>
+        <button class="button contents" style="width: 190px; text-align: center;" onclick="copybase64ToClipboard();" id="copybase64Code">Copy to Clipboard</button>
+        <span class="black" id="ignore-this"></span>
+        <script src="src/shared.js" type="text/javascript"></script>
+        <script src="src/javacode.js" type="text/javascript"></script>
+        <script src="src/mccode.js" type="text/javascript"></script>
+        <script src="src/preview.js" type="text/javascript"></script>
+        <script src="src/buttons.js" type="text/javascript"></script>
+        <script src="src/base64code.js" type="text/javascript"></script>
+        <script>
+            let theme = getCookie("theme");
+            if(theme === "dark"){
+                document.getElementById("toggleLightDarkMode").innerHTML = "Switch to Light Mode";
+                document.body.style.color = "#FFF";
+                document.body.style.backgroundColor = "#000";
+            }else if(theme === "light"){
+                document.getElementById("toggleLightDarkMode").innerHTML = "Switch to Dark Mode";
+                document.body.style.color = "#000";
+                document.body.style.backgroundColor = "#FFF";
+            }else{
+                document.getElementById("toggleLightDarkMode").innerHTML = "Switch to Dark Mode";
+                document.body.style.color = "#000";
+                document.body.style.backgroundColor = "#FFF";
+                let d = new Date();
+                d.setTime(d.getTime() + (300*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = "theme=light;" + expires + ";path=/";
+            }
+        </script>
+    </body>
+</html>
